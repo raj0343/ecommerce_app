@@ -5,3 +5,263 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+
+/* navbar */
+
+.navbar{
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  line-height: 26px;
+  text-transform: uppercase;
+  box-shadow: 0 8px 6px -6px rgb(15, 14, 14);
+  --wekit-box-shadow:0 8px 6px -6px gray;
+  border-bottom:  solid gray !important;
+
+}
+
+.nav-link{
+  font-weight: 300 !important;
+}
+
+.active{
+  border-bottom: 2px solid black;
+}
+
+.navbar-brand{
+  font-weight: 700;
+  font-family: 'roboto', sans-serif;
+  letter-spacing: 3px;
+}
+
+
+/* footer */
+.footer{
+  color: rgb(251, 244, 244);
+  padding: 15px;
+  /* background-color: black; */
+  text-align: center;
+}
+
+.footer a{
+  text-decoration: none;
+  color: rgb(236, 231, 231);
+  padding: 8px;
+}
+
+.footer a:hover{
+  color: #ffefba;
+  border-bottom: 1px solid #ffefba;
+}
+
+
+
+
+
+/* Pagenot Found */
+
+.pnf{
+  display: flex;
+  min-height: 55vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px); /* adjust based on navbar height */
+  background: linear-gradient(to right, #e0eafc, #cfdef3);
+  font-family: 'Poppins', sans-serif;
+  padding: 40px 0;
+}
+
+.register-form {
+  background: rgb(244, 5, 5);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  max-height: 100%; /* prevent overflow */
+}
+
+
+.register-form h2 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #060505;
+  text-align: center;
+}
+
+.register-form .form-control {
+  padding: 12px 15px;
+  border-radius: 10px;
+  font-size: 15px;
+  border: 1px solid #817474;
+  transition: all 0.3s;
+}
+
+.register-form .form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+.register-form button {
+  padding: 12px;
+  background-color: #007bff;
+  border: none;
+  color: rgb(246, 244, 244);
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.register-form button:hover {
+  background-color: #0056b3;
+}
+
+
+.register-form {
+  background: rgb(246, 244, 244);
+  padding: 40px 35px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px; /* increased from 400px */
+}
+
+
+
+.product-link{
+  text-decoration: none !important;
+  color: white;
+
+}
+
+
+
+
+
+/* === Filter Panel Styling === */
+.col-md-2 > div {
+  background: linear-gradient(to bottom right, #f0f8ff, #e6f2ff);
+  border: 1px solid #cce7ff !important;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 102, 204, 0.1);
+}
+
+.col-md-2 h5 {
+  font-weight: 600;
+  color: #003366;
+  text-align: center;
+}
+
+/* Checkbox and Radio spacing */
+.ant-checkbox-wrapper,
+.ant-radio-wrapper {
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
+}
+
+.ant-checkbox-wrapper:hover,
+.ant-radio-wrapper:hover {
+  background-color: #e6f2ff;
+  cursor: pointer;
+}
+
+/* === Product Card Styling === */
+.card {
+  border-radius: 12px !important;
+  border: 1px solid #dee2e6 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  color: #003366;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.card-text {
+  color: #333;
+  font-size: 0.95rem;
+}
+
+/* === Buttons === */
+.btn-primary {
+  background-color: #0066cc !important;
+  border-color: #005bb5 !important;
+  color: white;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #004b99 !important;
+  border-color: #003d80 !important;
+}
+
+
+
+
+/* === Create Product Form Container === */
+
+/* === Heading === */
+.col-md-9 h1 {
+  color: #003366;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+/* === Input & Select Styling === */
+.form-control,
+.form-select,
+.ant-select-selector {
+  border: 1px solid #cce0ff !important;
+  border-radius: 6px !important;
+  padding: 10px !important;
+  font-size: 1rem !important;
+  background-color: #fff !important;
+  box-shadow: none !important;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus,
+.ant-select-focused .ant-select-selector {
+  border-color: #66b3ff !important;
+  box-shadow: 0 0 0 3px rgba(102, 179, 255, 0.25) !important;
+}
+
+/* === File Upload Label === */
+.btn-outline-secondary {
+  font-weight: 500;
+  background-color: #eaf4ff;
+  border-color: #a3cfff;
+  color: #003366;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #d0e9ff;
+  border-color: #80bdff;
+}
+
+
+
+.btn-primary:hover {
+  background-color: #004b99 !important;
+  border-color: #003d80 !important;
+}
