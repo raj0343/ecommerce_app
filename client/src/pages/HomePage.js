@@ -9,6 +9,48 @@ const HomePage = () => {
   const [categories, setCategories] = useState([]);
   const [checked, setChecked] = useState([]);
   const [radio, setRadio] = useState([]);
+  const [total,setTotal]=useState(0)
+  const [page,setPage]=useState(1)
+  const [loading,setLoading]=useState(false)
+
+
+
+
+  //get total count
+  const getTotal=async()=>{
+    try {
+      const{data}=await axios.get('/api/v1/product/product-count')
+      setTotal(data?.total)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  useEffect(() =>
+    {
+      getTotal()
+    },[])
+
+
+
+
+
+    ///load more
+    const loadMore=async()=>{
+      try {
+        setLoading(true)
+        const {data}=await axios.get(`/api/v1/product/product-list/${page}`)
+        setLoading(false)
+        setProducts([...products,...data?.products])
+      } catch (error) {
+        console.log(error)
+        setLoading(false)
+      }
+    }
+
+    useEffect(()=>{
+      if(page===1)return
+      loadMore()
+    },[page])
 
   // Get all categories
   const getAllCategory = async () => {
@@ -25,9 +67,12 @@ const HomePage = () => {
   // Get all products
   const getAllProducts = async () => {
     try {
-      const { data } = await axios.get('/api/v1/product/get-product');
+      setLoading(true)
+      const { data } = await axios.get(`/api/v1/product/product-list/${page}`);
+      setLoading(false)
       setProducts(data.products);
     } catch (error) {
+      setLoading(false)
       console.log(error);
     }
   };
@@ -105,6 +150,9 @@ const HomePage = () => {
                 ))}
               </Radio.Group>
             </div>
+            <div className='d-flex flex-column' style={{ marginTop: '10px' }}>
+              <button className='btn btn-danger' onClick={()=>window.location.reload()}> Remove Filters</button>
+            </div>
           </div>
         </div>
 
@@ -135,6 +183,17 @@ const HomePage = () => {
                 </div>
               </div>
             ))}
+          </div>
+          <div className='m-2 p-3'>
+                {products && products.length <total && (
+                  <button className='btn btn-warning' onClick={(e)=>{
+                    e.preventDefault()
+                    setPage(page+1)
+                  }}>
+                    { loading?"Loading...." :"Loadmore.."}
+                  </button>
+                )}
+           
           </div>
         </div>
       </div>
