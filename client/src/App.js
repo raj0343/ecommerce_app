@@ -78,6 +78,8 @@ function App() {
         <Route path='/contact' element={<Contact />} />
         <Route path='/policy' element={<Policy />} />
         <Route path='*' element={<PagenotFound />} />
+
+
       </Routes>
 
       {/* ✅ Add this to render toast notifications */}
